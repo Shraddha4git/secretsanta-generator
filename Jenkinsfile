@@ -76,7 +76,7 @@ pipeline {
         	 
         stage('Docker Image Scan') {
             steps {
-               sh "trivy image adijaiswal/santa123:latest "
+               sh "trivy image shraddharanade542/santa123:latest "
             }
         }
     }         
