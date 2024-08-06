@@ -5,7 +5,7 @@ pipeline {
         maven 'maven3'
     }
     environment{
-        SCANNER_HOME= tool 'sonar-scanner'
+        SCANNER_HOME= tool 'sonar'
     }
 
     stages {
@@ -32,7 +32,7 @@ pipeline {
         stage('Sonar Analysis') {
             steps {
                withSonarQubeEnv('sonar'){
-                   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Santa \
+                   sh ''' $SCANNER_HOME/bin/sonar -Dsonar.projectName=Santa \
                    -Dsonar.java.binaries=. \
                    -Dsonar.projectKey=Santa '''
                }
